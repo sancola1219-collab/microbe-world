@@ -1,0 +1,14 @@
+# OS / 編輯器
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# 相依（本專案本來就沒有，保險起見）
+node_modules/
+
+# 本機預覽伺服器設定（非必要，個人環境）
+# 若想讓別人也能一鍵預覽可移除下一行
+.claude/

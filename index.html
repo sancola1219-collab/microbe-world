@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>微生物的世界 · 虛擬顯微鏡</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 模擬畫布 -->
+  <canvas id="stage"></canvas>
+
+  <!-- 顯微鏡暗角/鏡筒外框 -->
+  <div class="scope-vignette"></div>
+
+  <!-- 頂部 HUD -->
+  <header class="hud-top">
+    <div class="brand">
+      <span class="logo">🔬</span>
+      <div>
+        <div class="title">微生物的世界</div>
+        <div class="subtitle">虛擬顯微鏡 · 教學模擬</div>
+      </div>
+    </div>
+    <div class="readout">
+      <div class="readout-item"><span class="rlabel">放大倍率</span><span id="mag" class="rvalue">×—</span></div>
+      <div class="readout-item"><span class="rlabel">視野</span><span id="fov" class="rvalue">—</span></div>
+      <div class="readout-item wide"><span class="rlabel">觀察尺度</span><span id="depthLabel" class="rvalue">—</span></div>
+    </div>
+  </header>
+
+  <!-- 左側圖鑑 -->
+  <aside class="panel panel-left">
+    <div class="panel-title">🧫 物種圖鑑</div>
+    <div id="speciesList" class="species-list"></div>
+    <div class="panel-foot">點一種生物，鏡頭會自動找到牠</div>
+  </aside>
+
+  <!-- 右側資訊 -->
+  <aside class="panel panel-right">
+    <div id="infoPanel" class="info-panel"></div>
+  </aside>
+
+  <!-- 底部控制列 -->
+  <footer class="controls">
+    <button id="zoomOut" class="ctrl" title="拉遠 (-)">➖</button>
+    <button id="zoomIn" class="ctrl" title="拉近 (+)">➕</button>
+    <button id="labelBtn" class="ctrl on" title="器官標籤 (L)">🏷️ 標籤</button>
+    <button id="tourBtn" class="ctrl" title="自動導覽 (T)">🎬 自動導覽</button>
+    <button id="resetBtn" class="ctrl" title="回到全景">🌊 全景</button>
+    <div id="hint" class="hint">滾輪縮放 · 拖曳平移 · 點生物看解說</div>
+  </footer>
+
+  <!-- 載入順序：資料 → 元件 → 啟動 -->
+  <script src="js/config.js"></script>
+  <script src="js/species.js"></script>
+  <script src="js/camera.js"></script>
+  <script src="js/organism.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
